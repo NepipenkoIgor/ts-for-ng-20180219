@@ -16,7 +16,7 @@ function reverseWord(word: string): string {
 
 	result = word.split('').map((letter) => {
 		if (isLetter(letter)) {
-			return wordLettersArray.pop() as string;
+			return wordLettersArray.length && wordLettersArray.pop() || '';
 		} else {
 			return letter;
 		}

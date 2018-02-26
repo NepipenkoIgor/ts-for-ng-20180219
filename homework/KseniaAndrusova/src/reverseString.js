@@ -1,4 +1,3 @@
-"use strict";
 /*
 *  Написать функцию котороя будет разворачивать буквы в словах предложения, но только лишь буквы
    цифры и специальные символы должны остаться на месте
@@ -14,7 +13,7 @@ function reverseWord(word) {
     var result = [];
     result = word.split('').map(function (letter) {
         if (isLetter(letter)) {
-            return wordLettersArray.pop();
+            return wordLettersArray.length && wordLettersArray.pop() || '';
         }
         else {
             return letter;
