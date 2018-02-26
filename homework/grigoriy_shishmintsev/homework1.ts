@@ -132,4 +132,43 @@
     console.log('magicReverse', res1, res2, res3);
 })();
     
+
+(function() {
+
+    // Debounce decorator
+
+    function debounce(time: number) {
+
+        return function (target: any, propertyKey: string, descriptor: PropertyDescriptor) {
+
+            const originalMethod = descriptor.value;
+            
+            descriptor.value = function (...args) {
+               
+                setTimeout(() => {
+                    originalMethod.call(this, args);
+                }, time);
+
+            };
+            
+            return descriptor;
+        };
+    }
+
+    class Person {
+
+        constructor(public name: string) {
+
+        }
+
+        @debounce(300)
+        public greet(greeter: string) : void {
+            console.log(greeter + ', my name is ' + this.name);
+        }
+    }
+
+    const person = new Person('Petya');
+
+    person.greet('hello');
     
+})();
