@@ -6,17 +6,20 @@
   */
 
 function pushIfUnique(resultArray: any[], currentElem: any) {
-	if (!resultArray.includes(currentElem)) {
-		resultArray.push(currentElem);
-	}
-	return resultArray;
+  if (!resultArray.includes(currentElem)) {
+    resultArray.push(currentElem);
+  }
+  return resultArray;
 }
 
 function getUnique(...elements: any[]): any[] {
-	return elements.reduce(pushIfUnique, []);
+  return elements.reduce(pushIfUnique, []);
 }
 
-let me: object = {name: 'Ksenia', age: 25};
+let me: object = {
+  name: 'Ksenia',
+  age: 25
+};
 
 console.info(getUnique(1, 2, 3, 45, 1, 2, 3, 4, 5));
 console.info(getUnique(25, 2, 3, 'apple', me, 'apple', 'lemon', me, 1));
