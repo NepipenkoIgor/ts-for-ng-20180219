@@ -41,4 +41,34 @@ function getUnique(...args: any[]) {
   
   }
 
- 
+ //4
+function reverseWords(input: string) :string {
+  let res: string = "";
+
+  let input_split: string[] = input.split(' ');
+
+  for (let s in input_split) {
+    let charArray = s.split('');
+
+    //перевернутая строка без символов
+    let nosymbols = charArray.filter(c => isLetter(c)).reverse();
+
+    let tmp = nosymbols.join("");
+    for (let i = 0; i < charArray.length; i++) {
+      if (!isLetter(charArray[i])) {
+        tmp = [tmp.slice(0, i), charArray[i], tmp.slice(i)].join('');
+      }
+    }
+
+    res+= tmp + " ";
+  }
+
+  return res.trim();
+}
+
+function isLetter(str: string) {
+  return str.length === 1 && str.match(/[a-z]/i);
+}
+
+
+console.log(reverseWords("s1tar3t 2 hellow"));
