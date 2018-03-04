@@ -6,32 +6,23 @@
       s1tar3t 2   low5  ->  t1rat3s 2   wol5
 */
 
-function isLetter(letter: string): boolean {
-	return /[a-z]/i.test(letter);
+export function isLetter(letter: string): boolean {
+	return /[a-zA-Z]/i.test(letter);
 }
 
-function reverseWord(word: string): string {
+export function reverseWord(word: string): string {
 	const wordLettersArray: string[] = word.split('').filter((letter) => isLetter(letter));
-	let result: string[] = [];
-
-	result = word.split('').map((letter) => {
+	const result: string[] = word.split('').map((letter) => {
 		if (isLetter(letter)) {
 			return wordLettersArray.length && wordLettersArray.pop() || '';
-		} else {
-			return letter;
 		}
+		return letter;
 	});
-
 	return result.join('');
-
 }
 
-function reverseSentence(text: string): string {
-	let words: string[] = text.split(' ');
-	let reversedWords: string[] = words.map((word) => reverseWord(word));
+export function reverseSentence(text: string): string {
+	const words: string[] = text.split(' ');
+	const reversedWords: string[] = words.map((word) => reverseWord(word));
 	return reversedWords.join(' ');
 }
-
-console.info(reverseSentence('s1tar3t 2 hellow'));
-console.info(reverseSentence('s1ta$%r3t 2 hel^low'));
-console.info(reverseSentence('s1tar3t 2   low5'));
