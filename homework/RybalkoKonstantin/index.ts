@@ -24,7 +24,7 @@ export function getUnique(...arr:(StringNumber | boolean)[]):(StringNumber | boo
     return arr.reduce(isItemUnique, [])
 }
 
-interface MyObj {
+interface position {
     position:number;
     letter:string
 }
@@ -34,14 +34,14 @@ export function smartReverse(str:string = 'hellow world'):string {
     const resArr:string[] = [];
 
     splitedStr.forEach((word:string)=> {
-        const fixedArr:MyObj[] = [];
+        const fixedArr:position[] = [];
         const regExp:RegExp = /[a-zA-Z]/i;
         const isReversSymbol = (symbol:string):boolean => regExp.test(symbol);
 
         const wordArr:string[] = word
             .split('')
             .filter((symbol, index)=> {
-                const obj:MyObj = {position: index, letter: symbol};
+                const obj:position = {position: index, letter: symbol};
                 const isSymbol = isReversSymbol(symbol);
                 if (isSymbol) {
                     return symbol
