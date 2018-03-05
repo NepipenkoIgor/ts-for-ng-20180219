@@ -4,24 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "nyc mocha -r ts-node/register homework/**/*.spec.ts"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@types/chai": "^4.1.2",
-    "@types/mocha": "^2.2.48",
-    "chai": "^4.1.2",
-    "mocha": "^5.0.1",
-    "nyc": "^11.4.1",
-    "ts-node": "^5.0.1",
     "tslint": "^5.9.1",
     "typescript": "^2.7.2"
-  },
-  "nyc": {
-    "extension": [".ts"],
-    "exclude": ["**/*.spec.ts"],
-    "require": ["ts-node/register"]
   }
 }
