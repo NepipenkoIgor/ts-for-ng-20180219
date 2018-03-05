@@ -1,6 +1,24 @@
 import { expect } from 'chai';
 import { getUnique, isInArray, reverseWords, summator } from './homework1';
 
+describe('isInArray', () => {
+    it('should return true isInArray([1,"aaa", 2,3, "ww"],3,4,"aaa")', () => {
+        const result = isInArray([1, 'aaa', 2, 3, 4, 'ww'], 3, 4, 'aaa');
+        expect(result)
+            .to
+            .equal(true);
+    });
+});
+
+describe('isInArray', () => {
+    it('should return false isInArray([1,"aaa", 2,3, "ww"], 3 ,5, "aaa")', () => {
+        const result = isInArray([1, 'aaa', 2, 3, 4, 'ww'], 3, 5, 'aaa');
+        expect(result)
+            .to
+            .equal(false);
+    });
+});
+
 describe('reverseWords', () => {
     it('should reverse "s1Tar3t 2 hellow" -> "t1raT3s 2 wolleh"', () => {
         const result = reverseWords('s1Tar3t 2 hellow');
@@ -16,15 +34,6 @@ describe('reverseWords', () => {
         expect(result)
             .to
             .equal('t1ra$%t3s 2 Wol^leh');
-    });
-});
-
-describe('isInArray', () => {
-    it('should return true isInArray([1,"aaa", 2,3, "ww"],3,4,"aaa")', () => {
-        const result = isInArray([1, 'aaa', 2, 3, 4, 'ww'], 3, 4, 'aaa');
-        expect(result)
-            .to
-            .equal(true);
     });
 });
 

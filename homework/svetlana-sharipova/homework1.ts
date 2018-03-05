@@ -1,5 +1,5 @@
 // 1
-export function isInArray(a: any[], ...args: any[]) {
+export function isInArray(a: (number | string)[], ...args: (number | string)[]) {
   if (args.length === 0) {
     return false;
   }
