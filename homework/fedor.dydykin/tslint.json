@@ -4,6 +4,6 @@
         "tslint:recommended"
     ],
     "jsRules": {},
-    "rules": {"quotemark": [true, "double"], "curly": true},
+    "rules": {"quotemark": [true, "double"], "curly": true, "no-console": [false]},
     "rulesDirectory": []
 }
