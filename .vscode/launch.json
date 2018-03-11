@@ -7,8 +7,8 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Homework1",
-            "program": "${workspaceFolder}/homework\\grigoriy_shishmintsev\\homework1.ts",
+            "name": "grigoriy_shishmintsev",
+            "program": "${workspaceFolder}/homework/grigoriy_shishmintsev/index.ts",
             "outFiles": [
                 "${workspaceFolder}/**/*.js"
             ]
