@@ -3,17 +3,16 @@
  Аргументы могут быть либо строкового либо числового типа. Количество их не ограничено
  */
 
-function summator(...elements: Array<string | number>): number {
-	let result: number = 0;
-	for (let elem of elements) {
-		if (typeof elem === 'string') {
-			result += parseFloat(elem);
-		} else {
-			result += elem;
+type strNum = string | number;
+
+export function summator(...elements: strNum[]): number {
+	return elements.reduce((prev: number, currentValue: strNum): number =>  {
+		if (typeof currentValue === 'number') {
+			return prev + currentValue;
 		}
-	}
 
-	return result;
+		return prev + (Number.isNaN(parseFloat(currentValue))
+			? 0
+			: parseFloat(currentValue));
+	}, 0);
 }
-
-console.info(summator(6, 10, '22', 13, '11.22'));
