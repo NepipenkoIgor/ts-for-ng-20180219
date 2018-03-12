@@ -1,7 +1,7 @@
-import { isInArray } from './isInArray';
-import { summator } from './summator';
-import { getUnique } from './getUnique';
-import { magicReverse } from './magicReverse';
+import { isInArray } from './isInArray/isInArray';
+import { summator } from './summator/summator';
+import { getUnique } from './getUnique/getUnique';
+import { magicReverse } from './magicReverse/magicReverse';
 
 (function () {
 
