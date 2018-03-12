@@ -1,11 +1,14 @@
-  // 1)
-  //   Написать функцию isInArray(), которая начиная со второго принимает переменное количество аргументов.
-  //   Возвращает true, если все аргументы, кроме первого входят в первый.
-  //   Первым всегда должен быть массив.
+// 1)
+//   Написать функцию isInArray(), которая начиная со второго принимает переменное количество аргументов.
+//   Возвращает true, если все аргументы, кроме первого входят в первый.
+//   Первым всегда должен быть массив.
 
-  export const isInArray = (arr: any[], ...items: any[]): Boolean => {
+type StrNum = string | number;
 
-    return items.every(item => {
-      return Boolean(arr.indexOf(item) !== -1);
-    });
-  }
+export const isInArray = (arr: StrNum[], ...items: StrNum[]): boolean => {
+
+	return items.every((item) => {
+		return Boolean(arr.indexOf(item) !== -1);
+	});
+
+};
