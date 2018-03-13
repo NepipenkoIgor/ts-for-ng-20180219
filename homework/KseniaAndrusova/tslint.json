@@ -5,7 +5,9 @@
     ],
     "jsRules": {},
     "rules": {
-      "quotemark": [true, "single"]
+        "quotemark": false,
+        "no-console": ["log"],
+        "indent": [true, "tabs", 4]
     },
     "rulesDirectory": []
 }
