@@ -1,17 +1,25 @@
-function reverseString(text: string): string {
-    const reg = /[a-zA-Z]/;
-    let newString: string = text.split(' ')
-        .map(word => {
-            let anySymbolsArr: string[] = word.split('');
-            let lettersArr: string[] = anySymbolsArr.filter(letter => reg.test(letter));
-            let reverseArr: string[] = anySymbolsArr.map(str => reg.test(str) ? lettersArr.pop() : str);
-
+export function reverseString(text: string): string {
+    const newString: string = text.split(' ')
+        .map((word: string): string => {
+            const anySymbolsArr: string[] = word.split('');
+            const lettersArr: string[] = anySymbolsArr.filter((letter: string): boolean => isString(letter));
+            const reverseArr: string[] = anySymbolsArr.map((str: string): string => {
+                /*
+                * reverseSting.ts(7,17): error TS2322: Type 'string | undefined' is not assignable to type 'string'.
+                * Type 'undefined' is not assignable to type 'string'.
+                * wat?
+                * */
+                return isString(str)
+                    ? lettersArr.pop()
+                    : str;
+            });
             return reverseArr.join('');
         }).join(' ');
 
     return newString;
 }
 
-console.log(reverseString('s1tar3t 2 hellow'));//t1rat3s 2 wolleh
-console.log(reverseString('s1ta$%r3t 2 hel^low'));//t1ra$%t3s 2 wol^leh
-console.log(reverseString('s1tar3t 2   low5'));//t1rat3s 2   wol5
+function isString(arg: string): boolean {
+    const reg: RegExp = /[a-zA-Z]/;
+    return reg.test(arg);
+}
